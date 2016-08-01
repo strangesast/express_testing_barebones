@@ -1,0 +1,20 @@
+html
+  head
+    meta(charset="utf-8")
+    title Mocha Tests
+    link(href="/mocha/mocha.css", rel="stylesheet")
+
+  body
+    #mocha
+  
+    script(src="/expect.js/index.js")
+    script(src="/mocha/mocha.js")
+  
+    script().
+      mocha.setup('bdd')
+
+    script(src="/test/test.js")
+
+    script().
+      mocha.checkLeaks();
+      mocha.run();
